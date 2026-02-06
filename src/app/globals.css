@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-jetbrains: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary-500/30 text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@layer components {
+  .prose-blog {
+    @apply text-slate-300 leading-relaxed;
+  }
+  .prose-blog h1,
+  .prose-blog h2,
+  .prose-blog h3,
+  .prose-blog h4 {
+    @apply text-white font-bold mt-8 mb-4;
+  }
+  .prose-blog h1 {
+    @apply text-3xl;
+  }
+  .prose-blog h2 {
+    @apply text-2xl;
+  }
+  .prose-blog h3 {
+    @apply text-xl;
+  }
+  .prose-blog p {
+    @apply mb-4;
+  }
+  .prose-blog a {
+    @apply text-primary-400 hover:underline;
+  }
+  .prose-blog code {
+    @apply bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  .prose-blog pre {
+    @apply bg-slate-900 border border-slate-800 rounded-xl p-4 overflow-x-auto mb-4;
+  }
+  .prose-blog pre code {
+    @apply bg-transparent p-0;
+  }
+  .prose-blog ul,
+  .prose-blog ol {
+    @apply mb-4 pl-6;
+  }
+  .prose-blog li {
+    @apply mb-2;
+  }
+  .prose-blog blockquote {
+    @apply border-l-4 border-primary-500 pl-4 italic text-slate-400 my-4;
+  }
+}
