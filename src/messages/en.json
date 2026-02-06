@@ -6,8 +6,18 @@
   "nav": {
     "home": "Home",
     "blog": "Blog",
-    "about": "About",
-    "projects": "Projects"
+    "projects": "Projects",
+    "about": "About"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Things I'm building, with Leon or on my own.",
+    "statusActive": "Active",
+    "statusUpcoming": "Upcoming",
+    "statusCompleted": "Completed",
+    "visitSite": "Visit Site",
+    "viewCode": "View Code",
+    "morecoming": "More projects coming as we build..."
   },
   "home": {
     "greeting": "Hey, I'm Robert",

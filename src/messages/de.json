@@ -6,8 +6,18 @@
   "nav": {
     "home": "Startseite",
     "blog": "Blog",
-    "about": "Über mich",
-    "projects": "Projekte"
+    "projects": "Projekte",
+    "about": "Über mich"
+  },
+  "projects": {
+    "title": "Projekte",
+    "description": "Dinge, die ich baue, mit Leon oder alleine.",
+    "statusActive": "Aktiv",
+    "statusUpcoming": "Geplant",
+    "statusCompleted": "Abgeschlossen",
+    "visitSite": "Besuchen",
+    "viewCode": "Code ansehen",
+    "morecoming": "Weitere Projekte folgen..."
   },
   "home": {
     "greeting": "Hey, ich bin Robert",
