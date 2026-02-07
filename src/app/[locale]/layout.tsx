@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing';
 import { Header, Footer } from '@/components/layout';
 import { GridBackground, ParticleField } from '@/components/ui/AnimatedBackground';
 import '@/app/globals.css';
+import '@/styles/markdown.css';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
-import { marked } from 'marked';
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
+import { renderMarkdown } from '@/lib/markdown';
 import { Card, Badge } from '@/components/ui';
 import { FadeIn } from '@/components/ui/Animations';
 import Link from 'next/link';
+import 'highlight.js/styles/github-dark.css';
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -27,7 +28,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const htmlContent = marked(post.content);
+  const htmlContent = renderMarkdown(post.content);
 
   return (
     <div className="min-h-screen py-16">
@@ -63,19 +64,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {/* Content */}
           <Card className="p-8">
-            <div 
-              className="prose prose-invert prose-slate max-w-none
-                prose-headings:font-bold prose-headings:text-white
-                prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-                prose-p:text-slate-300 prose-p:leading-relaxed
-                prose-a:text-primary-400 prose-a:no-underline hover:prose-a:text-primary-300
-                prose-strong:text-white prose-strong:font-semibold
-                prose-code:text-primary-400 prose-code:bg-slate-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-                prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-700
-                prose-ul:text-slate-300 prose-ol:text-slate-300
-                prose-li:marker:text-primary-400
-                prose-blockquote:border-l-primary-400 prose-blockquote:text-slate-400
-                prose-hr:border-slate-700"
+            <article 
+              className="markdown-content"
               dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
           </Card>
