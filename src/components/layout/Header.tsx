@@ -12,6 +12,8 @@ export function Header() {
     { href: '/', label: t('home') },
     { href: '/blog', label: t('blog') },
     { href: '/projects', label: t('projects') },
+    { href: '/roadmap', label: t('roadmap') },
+    { href: '/laws', label: t('laws') },
     { href: '/about', label: t('about') },
   ];
 
