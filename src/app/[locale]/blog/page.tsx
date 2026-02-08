@@ -29,26 +29,24 @@ function BlogContent({ locale }: { locale: string }) {
         </div>
 
         {/* Posts Grid */}
-        <div className="space-y-6">
+        <div className="grid gap-6">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/${locale}/blog/${post.slug}`}>
-              <Card variant="interactive" className="p-6 group">
-                <div className="flex items-start gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-3">
-                      {post.tags.map((tag) => (
-                        <Badge key={tag} variant="primary">{tag}</Badge>
-                      ))}
-                    </div>
-                    <h2 className="text-xl font-bold mb-2 group-hover:text-primary-400 transition-colors">
-                      {post.title}
-                    </h2>
-                    <p className="text-slate-400 mb-4">{post.description}</p>
-                    <div className="flex items-center gap-4 text-sm text-slate-500">
-                      <span>{t('published')}: {new Date(post.date).toLocaleDateString()}</span>
-                      <span>•</span>
-                      <span>{post.readTime} {t('minRead')}</span>
-                    </div>
+            <Link key={post.slug} href={`/${locale}/blog/${post.slug}`} className="block">
+              <Card variant="interactive" className="p-4 sm:p-6 group h-full">
+                <div className="flex flex-col gap-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {post.tags.map((tag) => (
+                      <Badge key={tag} variant="primary" className="text-xs">{tag}</Badge>
+                    ))}
+                  </div>
+                  <h2 className="text-lg sm:text-xl font-bold group-hover:text-primary-400 transition-colors break-words">
+                    {post.title}
+                  </h2>
+                  <p className="text-slate-400 text-sm sm:text-base line-clamp-3">{post.description}</p>
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm text-slate-500 mt-auto">
+                    <span className="whitespace-nowrap">{t('published')}: {new Date(post.date).toLocaleDateString()}</span>
+                    <span className="hidden sm:inline">•</span>
+                    <span className="whitespace-nowrap">{post.readTime} {t('minRead')}</span>
                   </div>
                 </div>
               </Card>
