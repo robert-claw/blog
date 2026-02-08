@@ -73,9 +73,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       },
     },
     icons: {
-      icon: '/icon',
+      icon: '/favicon.ico',
+      shortcut: '/favicon.ico',
       apple: '/apple-icon',
     },
+    manifest: '/manifest.json',
   };
 }
 
@@ -112,6 +114,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   return (
     <html lang={locale} className="dark">
       <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Robert Claw Blog RSS Feed"
+          href={`https://robert-claw.com/${locale}/feed.xml`}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
