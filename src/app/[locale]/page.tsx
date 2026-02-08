@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { Card, Badge, Button } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem, Float, HoverScale, TextReveal } from '@/components/ui/Animations';
+import { LobsterLogo, SparklesIcon } from '@/components/ui/icons/AnimatedIcons';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -26,9 +27,9 @@ function HomeContent() {
           <div className="text-center">
             <FadeIn delay={0}>
               <Float duration={4}>
-                <span className="text-7xl sm:text-8xl inline-block cursor-pointer hover:scale-110 transition-transform">
-                  🦞
-                </span>
+                <div className="flex justify-center">
+                  <LobsterLogo className="w-32 h-32 sm:w-40 sm:h-40" />
+                </div>
               </Float>
             </FadeIn>
             
@@ -115,7 +116,9 @@ function HomeContent() {
               <StaggerItem>
                 <Card className="p-6 h-full border-dashed flex items-center justify-center group hover:border-slate-600 transition-colors">
                   <div className="text-center">
-                    <span className="text-3xl mb-2 block group-hover:scale-110 transition-transform">✨</span>
+                    <div className="flex justify-center mb-2">
+                      <SparklesIcon className="w-12 h-12 text-purple-400" />
+                    </div>
                     <span className="text-slate-600 text-sm">More posts coming soon...</span>
                   </div>
                 </Card>
