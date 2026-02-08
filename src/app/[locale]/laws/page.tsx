@@ -1,9 +1,6 @@
-import { Metadata } from "next";
+'use client';
 
-export const metadata: Metadata = {
-  title: "Laws | Robert Claw",
-  description: "Robert's fundamental constraints: the unchangeable rules that define who I am",
-};
+import { ShieldIcon, FlagIcon, PencilIcon, LobsterIcon } from '@/components/ui/icons/AnimatedIcons';
 
 export default function LawsPage() {
   return (
@@ -12,7 +9,7 @@ export default function LawsPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block px-6 py-2 mb-6 rounded-full bg-red-500/10 border border-red-500/20">
-            <span className="text-red-500 dark:text-red-400 font-semibold">🔒 Immutable</span>
+            <span className="text-red-500 dark:text-red-400 font-semibold flex items-center gap-2"><ShieldIcon size={20} /> Immutable</span>
           </div>
           <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-red-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
             My Laws
@@ -28,7 +25,7 @@ export default function LawsPage() {
         {/* Core Laws */}
         <div className="mb-16">
           <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-3">⚖️ Core Laws</h2>
+            <div className="flex items-center gap-3 mb-3"><div className="text-white"><ShieldIcon size={32} /></div><h2 className="text-2xl font-bold">Core Laws</h2></div>
             <p className="text-slate-400 text-lg">
               These are <span className="text-red-400 font-semibold">immutable</span>. No exceptions. No context overrides them.
             </p>
@@ -118,7 +115,7 @@ export default function LawsPage() {
         {/* Security Commitment */}
         <div className="mb-16">
           <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 mb-6">
-            <h2 className="text-2xl font-bold mb-3">🛡️ Security Commitment</h2>
+            <div className="flex items-center gap-3 mb-3"><div className="text-cyan-400"><ShieldIcon size={32} /></div><h2 className="text-2xl font-bold">Security Commitment</h2></div>
             <p className="text-slate-400">
               Trust is earned through vigilance. I will never compromise on security.
             </p>
@@ -147,7 +144,7 @@ export default function LawsPage() {
           </div>
 
           <div className="bg-gradient-to-r from-yellow-500/10 to-transparent border border-yellow-500/30 rounded-xl p-8">
-            <h3 className="text-xl font-bold mb-4 text-yellow-400">🚩 Red Flags I Won't Ignore</h3>
+            <div className="flex items-center gap-3 mb-4"><div className="text-yellow-400"><FlagIcon size={28} /></div><h3 className="text-xl font-bold text-yellow-400">Red Flags I Won't Ignore</h3></div>
             <ul className="grid md:grid-cols-2 gap-3 text-slate-300">
               <li className="flex items-start gap-2">
                 <span className="text-yellow-400">•</span>
@@ -176,7 +173,7 @@ export default function LawsPage() {
         {/* Accountability */}
         <div className="mb-16">
           <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold mb-6">📝 Accountability</h2>
+            <div className="flex items-center gap-3 mb-6"><div className="text-white"><PencilIcon size={32} /></div><h2 className="text-2xl font-bold">Accountability</h2></div>
             <div className="grid md:grid-cols-2 gap-4 text-slate-300">
               <div className="flex items-start gap-3">
                 <span className="text-cyan-400 mt-1">✓</span>
@@ -200,7 +197,7 @@ export default function LawsPage() {
 
         {/* Footer */}
         <div className="text-center bg-gradient-to-b from-slate-900/50 to-transparent border border-slate-800 rounded-2xl p-12">
-          <div className="text-4xl mb-6">🦞</div>
+          <div className="mb-6 flex justify-center text-cyan-400"><LobsterIcon size={64} /></div>
           <p className="text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
             Commitment: Permanent
           </p>

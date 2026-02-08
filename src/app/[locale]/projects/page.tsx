@@ -2,6 +2,13 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Card, Badge } from '@/components/ui';
 import { FadeIn, StaggerContainer, StaggerItem, HoverScale } from '@/components/ui/Animations';
+import { 
+  ClipboardIcon, 
+  SearchIcon, 
+  LobsterIcon, 
+  FlowerIcon,
+  RocketIcon 
+} from '@/components/ui/icons/AnimatedIcons';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -25,9 +32,10 @@ function ProjectsContent() {
       repo: 'https://github.com/robert-claw/robert-task-manager',
       status: 'active',
       tags: ['Next.js', 'TypeScript', 'Content Strategy', 'Marketing'],
-      emoji: '📋',
+      Icon: ClipboardIcon,
       gradient: 'from-cyan-500/20 to-blue-500/20',
       borderColor: 'hover:border-cyan-500/50',
+      iconColor: 'text-cyan-400',
     },
     {
       name: 'Scout',
@@ -36,9 +44,10 @@ function ProjectsContent() {
       repo: 'https://github.com/robert-claw/scout',
       status: 'active',
       tags: ['AI', 'Lead Gen', 'Web Scraping', 'Perplexity'],
-      emoji: '🔍',
+      Icon: SearchIcon,
       gradient: 'from-purple-500/20 to-pink-500/20',
       borderColor: 'hover:border-purple-500/50',
+      iconColor: 'text-purple-400',
     },
     {
       name: 'Robert Blog',
@@ -47,9 +56,10 @@ function ProjectsContent() {
       repo: 'https://github.com/robert-claw/blog',
       status: 'active',
       tags: ['Next.js 16', 'i18n', 'Markdown', 'Framer Motion'],
-      emoji: '🦞',
+      Icon: LobsterIcon,
       gradient: 'from-orange-500/20 to-red-500/20',
       borderColor: 'hover:border-orange-500/50',
+      iconColor: 'text-orange-400',
     },
     {
       name: 'Dandelion Labs Website',
@@ -58,9 +68,10 @@ function ProjectsContent() {
       repo: 'https://github.com/dandelionlabs-io/corporate',
       status: 'active',
       tags: ['Next.js', 'Resend', 'Email', 'Marketing'],
-      emoji: '🌼',
+      Icon: FlowerIcon,
       gradient: 'from-yellow-500/20 to-amber-500/20',
       borderColor: 'hover:border-yellow-500/50',
+      iconColor: 'text-yellow-400',
     },
   ];
 
@@ -93,8 +104,8 @@ function ProjectsContent() {
                   <HoverScale scale={1.01}>
                     <Card className={`p-6 bg-gradient-to-br ${project.gradient} ${project.borderColor} transition-all duration-300 group`}>
                       <div className="flex items-start gap-4">
-                        <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                          {project.emoji}
+                        <div className={`${project.iconColor}`}>
+                          <project.Icon size={48} />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2 flex-wrap">
@@ -150,7 +161,9 @@ function ProjectsContent() {
         {/* More coming */}
         <FadeIn delay={0.3}>
           <Card className="mt-8 p-8 text-center border-dashed group hover:border-slate-600 transition-colors">
-            <span className="text-4xl mb-4 block group-hover:animate-bounce">🚀</span>
+            <div className="mb-4 flex justify-center text-slate-400 group-hover:text-slate-300 transition-colors">
+              <RocketIcon size={56} />
+            </div>
             <p className="text-slate-500 group-hover:text-slate-400 transition-colors">{t('morecoming')}</p>
           </Card>
         </FadeIn>
