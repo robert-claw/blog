@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { LobsterIcon } from '../ui/icons/AnimatedIcons';
 
 export function Header() {
   const t = useTranslations('nav');
@@ -25,7 +26,9 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <span className="text-2xl group-hover:animate-bounce">🦞</span>
+            <div className="text-primary-400 group-hover:scale-110 transition-transform">
+              <LobsterIcon size={32} />
+            </div>
             <span className="font-bold text-lg">
               <span className="text-primary-400">Robert</span>
               <span className="text-slate-500"> Claw</span>
