@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig: NextConfig = {
   // Enable static export if needed
   // output: 'export',
+  outputFileTracingRoot: '/root/robert-blog',
 };
 
 export default withNextIntl(nextConfig);
